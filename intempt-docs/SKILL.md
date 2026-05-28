@@ -787,12 +787,10 @@ Never start with "In this article, you will learn." Just state the thing.]
 
 ### TUTORIAL — Stripe + Intercom pattern
 
-Use labeled H2 steps ("Step 1: [Title]") with role badges and complexity ratings.
+Use labeled H2 steps ("Step 1: [Title]") with role badges. No complexity ratings.
 
 ```
-# [Task-oriented title — imperative verb + goal]
-
-> **Integration effort:** [1-3/5]
+# [Task-oriented title: imperative verb + goal]
 
 **Before you begin:**
 - [Prerequisite 1]
@@ -1056,6 +1054,8 @@ Scraped from Twilio, Algolia, Stripe, GitHub, Notion, Linear, Intercom.
 ### Language
 - No marketing language in docs: "powerful", "seamless", "robust", "best-in-class"
 - No filler words: "simply", "just", "easily", "quickly", "straightforward"
+- No em dashes. Rewrite the sentence instead. "X — which means Y" becomes two sentences.
+- No integration effort ratings (e.g. "2/5"). Never rate difficulty.
 - Define every Intempt-specific term on first use, then link to the Glossary
 - Spell out abbreviations first time: "Customer Data Platform (CDP)"
 - US English throughout
@@ -1067,6 +1067,17 @@ Scraped from Twilio, Algolia, Stripe, GitHub, Notion, Linear, Intercom.
 - Bullet lists for non-sequential items
 - Tables for three or more items that share the same attributes
 - Code blocks for every command, snippet, API call, JSON payload
+
+### Formatting quality (what "beautiful" means for docs)
+- **Bold** every UI element the user clicks or navigates to: `Go to **Integrations** → **Sources**`
+- `inline code` for every parameter name, method name, event name, file path, and value
+- Table headers are title case. Table cells are sentence case.
+- Callouts are used sparingly. One callout per section maximum. Never stack two callouts.
+- One blank line between every paragraph, list, table, and code block. No walls of text.
+- Code blocks always have a language tag: ` ```javascript `, ` ```bash `, ` ```json `
+- Every code block has a one-line context comment if the purpose is not obvious from the surrounding text
+- Step content is tight: one sentence of why, then the numbered actions. No paragraph before each sub-step.
+- Placeholder values in code look realistic: `acme-corp`, `user@example.com`, `1001`. Never `YOUR_ORG_HERE` or `foo`.
 
 ### Step labeling (Intercom rule)
 Use "## Step 1: [Title]" as an H2, not just numbered list items.
@@ -1092,15 +1103,15 @@ This turns docs into a curriculum.
 ```
 
 **Callout hierarchy (from Twilio/Stripe/Intercom):**
-1. Security — appears on EVERY page that shows an API key or credential
-2. Warning — destructive operations, irreversible actions, trial/plan limits
-3. Note — non-obvious behavior, limits, edge cases
-4. Tip — efficiency shortcuts
-5. Recommendation (top of page) — "use X instead of Y for this use case"
+1. Security: appears on EVERY page that shows an API key or credential
+2. Warning: destructive operations, irreversible actions, trial/plan limits
+3. Note: non-obvious behavior, limits, edge cases
+4. Tip: efficiency shortcuts
+5. Recommendation (top of page): "use X instead of Y for this use case"
 
 ### Limitations stated upfront (Intercom rule)
-If a feature has plan-based limits, rate limits, or beta constraints — say so
-before the how-to steps in a > **Note:** callout. Never bury it in step 7.
+If a feature has plan-based limits, rate limits, or beta constraints, state them
+before the how-to steps in a `> **Note:**` callout. Never bury it in step 7.
 
 ### Code examples (Stripe standard)
 - Use realistic values. Not `foo`, `bar`, `test123`, `YOUR_VALUE_HERE`
@@ -1455,9 +1466,7 @@ against this example for structure, depth, tone, and completeness.
 
 # Connecting Your First Data Source
 
-A data source is the connection between your app and Intempt. Once a source is connected, Intempt starts capturing behavioral events automatically — page views, clicks, and sessions — without any custom code. This tutorial takes you from a new project to validated live data in four steps.
-
-> **Integration effort:** 2/5
+A data source is the connection between your app and Intempt. Once a source is connected, Intempt starts capturing behavioral events automatically: page views, clicks, and sessions, without any custom code. This tutorial takes you from a new project to validated live data in four steps.
 
 **Before you begin:**
 - You have an Intempt account and at least one project created
