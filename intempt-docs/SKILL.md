@@ -785,44 +785,101 @@ Never start with "In this article, you will learn." Just state the thing.]
 
 ---
 
-### TUTORIAL — Stripe + Intercom pattern
+### TUTORIAL — Two patterns by surface
 
-Use labeled H2 steps ("Step 1: [Title]") with role badges. No complexity ratings.
+**Use the correct pattern for the surface you are writing for.**
+
+---
+
+#### docs.intempt.com (developer docs) — Resend pattern
+
+Number is PART of the H2 heading text. Prerequisites get their own un-numbered H2 because they are a gate, not a step. No callouts on quickstart pages. Code block appears immediately after the heading with no prose between them. End with a card grid, not a bullet list.
 
 ```
-# [Task-oriented title: imperative verb + goal]
+# [Verb] with [Language/Framework]
 
-**Before you begin:**
-- [Prerequisite 1]
+Learn how to [goal] using the Intempt [SDK/feature].
+
+## Prerequisites
+- [Prerequisite 1 — link to where to get it]
 - [Prerequisite 2]
 
-> **Note:** [Any critical constraint upfront]
+## 1. Install
 
-## Step 1: [Specific action verb + object] [Client-side]
-
-[1-2 sentences explaining what this step does and why.]
-
-```javascript
-// Context comment: what is happening here
-intempt.identify({ userId: 'user@example.com', userAttributes: { plan: 'trial' } })
+```bash
+npm install @intempt/js-sdk
 ```
 
-> **Security:** Never put API keys in client-side code. Use environment variables.
+## 2. Initialize the client
 
-## Step 2: [Next specific action]
+```javascript
+import IntemptJs from '@intempt/js-sdk'
+
+const intempt = new IntemptJs({
+  organization: 'acme-corp',
+  sourceId: '1001',
+  project: 'production',
+  writeKey: process.env.INTEMPT_WRITE_KEY
+})
+```
+
+## 3. [First meaningful action]
+
+[One sentence if needed. Then code immediately — no paragraph between heading and code.]
+
+```javascript
+intempt.identify({
+  userId: 'user@example.com',
+  userAttributes: { plan: 'trial', signupDate: '2025-05-28' }
+})
+```
+
+## 4. Validate in Live Data Feed
+
+1. Open your app and trigger the action.
+2. Go to **Data Hub** → **Live Data Feed** in Intempt.
+3. Events appear within seconds.
+
+> **Security:** Never put your `writeKey` in client-side code that is committed to a public repository. Use environment variables.
+
+## Try it yourself
+
+[Card grid of related examples and next guides — not a bullet list]
+```
+
+---
+
+#### help.intempt.com (help docs) — Intercom pattern
+
+Use "## Step 1: [Title]" as a labeled H2. FAQ at the bottom from user fear. "Up next:" link at the end.
+
+```
+# How to [specific task]
+
+[One sentence max — only if the title needs clarification.]
+
+## Step 1: [Action]
+
+1. Navigate to **[Section]** → **[Subsection]**.
+2. Click **[Button]**.
+3. [Complete the action.]
+
+> **Tip:** [Shortcut or efficiency note]
+
+## Step 2: [Next action]
 
 [...]
 
-## Test your setup
+> **Note:** [Edge case, limit, or constraint]
 
-1. [Trigger the action in your product]
-2. Open **Live Data Feed** in your Intempt project
-3. Confirm events appear within seconds
+## Frequently asked questions
 
-## See also
-- [Related conceptual doc]
-- [API reference for this feature]
-- [How-to for the next logical task]
+**[Question from user fear]?**
+[Direct answer — 1-2 sentences.]
+
+---
+
+**Up next:** [Related how-to or next logical step] →
 ```
 
 ---
@@ -1045,11 +1102,18 @@ Scraped from Twilio, Algolia, Stripe, GitHub, Notion, Linear, Intercom.
 - Present tense: "The API returns" not "the API will return"
 - One idea per sentence. Two ideas = two sentences
 
-### Opening sentences (Notion rule)
-- Never start with "In this article..." or "This guide will explain..."
-- Open with what the feature IS: "Journeys are omnichannel lifecycle automations..."
-- Then add the problem it solves: "...that send the right message at the right moment."
-- Only THEN describe how to use it
+### Opening sentences — exact formulas by doc type (Resend rule)
+Every page opens with exactly ONE sentence. No second sentence before the first heading.
+
+| Doc type | Formula | Example |
+|---|---|---|
+| Developer tutorial | "Learn how to [goal] using the Intempt [SDK/feature]." | "Learn how to track your first event using the Intempt JS SDK." |
+| API reference | "[Verb] a single [noun]." | "Retrieve a single user profile." |
+| How-to (help) | One sentence stating what you will accomplish. | "Set up your Brand Kit so all Studio outputs use your colors and fonts." |
+| Conceptual | What it IS + the problem it solves, in one sentence. | "Journeys are omnichannel lifecycle automations that send the right message at the right moment." |
+| Knowledge base | Direct one-sentence answer to the title question. | "Warming up a domain means progressively increasing send volume to build inbox reputation." |
+
+Never: "In this article...", "This guide will explain...", "Welcome to...", "This page covers..."
 
 ### Language
 - No marketing language in docs: "powerful", "seamless", "robust", "best-in-class"
@@ -1113,13 +1177,28 @@ This turns docs into a curriculum.
 If a feature has plan-based limits, rate limits, or beta constraints, state them
 before the how-to steps in a `> **Note:**` callout. Never bury it in step 7.
 
-### Code examples (Stripe standard)
-- Use realistic values. Not `foo`, `bar`, `test123`, `YOUR_VALUE_HERE`
-- Use `YOUR_API_KEY` for API key placeholders
-- Add a comment on the line before any non-obvious code
-- Separate frontend from backend code — never mix in same block
-- Show install commands before first code example
-- Language selector on every integration guide (JS minimum; Python, Node where relevant)
+### Code examples (Stripe + Resend standard)
+- **Zero inline code comments** on developer doc pages (docs.intempt.com). Code is self-evident. Explanation goes in the prose above the block, never inside it. Exception: help docs (help.intempt.com) may have a single context comment per block.
+- **Copy-paste-ready test values** — use Intempt's real test credentials so code runs without editing:
+  - API key placeholder: `ik_test_xxxxxxxxx`
+  - Test org: `acme-corp`
+  - Test sourceId: `1001`
+  - Test project: `production`
+  - Test userId: `user@example.com`
+- Never use `foo`, `bar`, `YOUR_VALUE_HERE`, `test123`
+- Separate frontend from backend code — never mix in the same block
+- Show install commands before the first code example
+- All package managers in one tabbed code group (npm / yarn / pnpm / bun), not four separate blocks
+- Language selector on every integration guide (JS minimum; Python, Node, curl where relevant)
+- **Knowledge base articles** have zero code blocks — KB is prose only
+
+### Knowledge base titles (Resend rule)
+Every KB article title is phrased as a question matching the user's actual search query.
+- Good: "Why are my events not appearing in the dashboard?"
+- Good: "What is the difference between track() and record()?"
+- Bad: "Event Troubleshooting", "SDK Methods Reference", "Data Model"
+
+The title question is answered by the first sentence of the article, directly.
 
 ### Screenshots
 - Include for every step involving UI navigation or form interaction
@@ -1240,6 +1319,19 @@ From Twilio, Algolia, Stripe analysis:
 - **Accordion for optional steps** — advanced configurations don't clutter the main flow.
 - **Demo cards:** "View the demo", "Explore source code" at the end of every quickstart.
 - **All 11 SDK languages in tabs** within one code block.
+
+### Resend (gold standard for developer quickstart docs)
+- **One-sentence page openers with exact formulas:** Tutorial = "Learn how to [goal] using the Resend [SDK]." API ref = "[Verb] a single [noun]." Never a second sentence before the first heading.
+- **Number is part of the H2 text:** "## 1. Install" not "## Step 1: Install". Prerequisites get their own un-numbered H2 — a gate, not a step.
+- **Zero inline code comments** on all pages — code is self-evident; explanation in prose above the block only.
+- **Copy-paste-ready test values baked in:** `onboarding@resend.dev` and `delivered@resend.dev` are real working addresses. Readers run the code without editing anything.
+- **CardGroup endings** — tutorial pages end with a visual card grid of example repos, never a bullet list of "Next steps."
+- **Zero callouts on quickstart pages** — the tutorial flow is never interrupted by warning boxes.
+- **All 4 package managers in one tabbed code group** (npm/yarn/pnpm/bun) — never shown as separate blocks.
+- **11 languages on every API reference endpoint** — breadth-first SDK coverage is non-negotiable.
+- **Dual content architecture:** one URL serves two reading modes — comprehensive numbered-section flow at top, stripped-down 3-step flow at bottom for readers who scroll past everything.
+- **KB titles phrased as questions** matching search queries exactly: "Why Are My Emails Going to Spam?" not "Email Deliverability Troubleshooting."
+- **llms.txt machine-readable index** linked from every page header — treats AI agents as first-class doc consumers.
 
 ### Segment (closest CDP comparison)
 - **Journey-based navigation:** Getting Started → Connections → Protocols → Personas.
