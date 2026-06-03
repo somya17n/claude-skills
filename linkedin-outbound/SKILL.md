@@ -23,12 +23,20 @@ When the user says "LinkedIn outbound" or asks for a LinkedIn message:
 1. **Get the lead data** — ask for LinkedIn URL + category (AGENCY / AFFILIATE / SIGNUP)
    if not already provided. If they give a name and company, that's enough to start.
 
-2. **Research the lead** — use WebFetch on their LinkedIn URL to get:
-   - Their last 2-3 posts (what they actually said, not just that they posted)
-   - Their current role and how long they've been there
-   - What their company does (specific, not generic)
-   - Any trigger: hiring, funding, product launch, job change in last 90 days
-   - Their "About" section language (use their words back at them)
+2. **Research the lead DEEPLY** — use WebFetch on their LinkedIn URL AND their company
+   website AND search for them online. You must understand:
+   - Exactly what their company does (fetch the website, not just the tagline)
+   - Who their customers are and what problem they solve for them
+   - What their day-to-day work actually looks like
+   - What they personally work on (not just their title)
+
+   **The depth test:** If you only read their LinkedIn headline, you have not researched
+   enough. You must know what their company actually builds or delivers before writing.
+
+   **Example of bad research:** "New Lemon Studio — B2B web design agency"
+   **Example of good research:** "New Lemon Studio — Alex builds and designs websites
+   and landing pages for SaaS clients. Her deliverable IS the landing page. She needs
+   tools that help her build better pages faster and manage multiple client brands."
 
 3. **Pick the hook** — one specific observable fact about them. See Section 4.
 
@@ -99,16 +107,68 @@ changing a word? If yes, rewrite it.
 
 ---
 
+## 3B. CRITICAL RULE — PITCH ONE FEATURE ONLY
+
+After researching the lead, identify which single Intempt feature is most relevant
+to their actual work. Pitch ONLY that feature. Never list everything Intempt does.
+
+**The rule:** What does this person actually do every day? Which Intempt feature
+solves a real problem in their daily work? Pitch that one thing.
+
+**Feature-to-role mapping:**
+
+| Their work | The ONE Intempt feature to pitch |
+|---|---|
+| Designs/builds websites and landing pages for clients | AI Creative Studio — build landing pages in minutes, all client brands in one place |
+| Runs email/SMS campaigns for DTC clients | Lifecycle automation + AI email creative |
+| PLG content strategy (content to activation) | Analytics + lifecycle — connects content to product activation |
+| Fractional marketer across multiple SaaS clients | Full platform — one place to run all client work |
+| Growth advisor / GTM consultant | Lifecycle + experiments — what they recommend to clients |
+| Founder of early-stage SaaS | Lifecycle + activation tracking + experiments |
+| Founder of DTC brand | Lifecycle automation + AI creative + analytics |
+| Email/retention agency for ecommerce | Lifecycle automation + AI creative studio |
+| AI tools / dev-tools company | Product analytics + experiments |
+| Restaurant / local business platform | AI creative studio + lifecycle |
+
+**Bad (pitching everything):**
+"lifecycle automation, experiments, analytics, and an AI creative studio"
+
+**Good (pitching one thing):**
+"We built Intempt Studio, an AI creative tool that lets designers build landing pages
+for clients in minutes. All your client brands in one place."
+
+---
+
+## 3C. SIGNUP ICP — WHO TO TARGET AND WHO TO SKIP
+
+**Target for SIGNUP:**
+- Founders, CEOs, Co-founders of SaaS or DTC companies
+- Head of Marketing, VP Marketing, CMO, Chief Marketing Officer
+- Head of Growth, VP Growth, Growth Lead
+- Product Marketing Manager
+- Marketing Manager, Growth Manager at tech startups
+
+**Never target for SIGNUP:**
+- CTOs, VPs of Engineering, Software Engineers, ML Engineers
+- Technical founders whose co-founder handles all GTM
+- Data Scientists, AI Researchers, DevOps
+- Anyone whose primary role is building the product, not growing it
+
+**Why:** Intempt is a marketing and growth platform. Engineers don't buy it,
+don't use it, and won't know why it's relevant. The message lands flat.
+
+---
+
 ## 4. THE THREE MESSAGE ANGLES
 
-### SIGNUP (founder, growth lead, marketing person at startup)
+### SIGNUP (founder or marketing/growth lead at SaaS or DTC startup)
 They could use Intempt directly. The pitch is free access.
 
-**Research focus:** What are they building? What stage? What's their activation or
-retention problem? Did they post about any GTM pain?
+**Research focus:** What are they building? What stage? What does their marketing
+or growth motion look like? What is the ONE feature most relevant to their situation?
 
-**Angle:** You noticed something specific about their situation that Intempt helps with.
-Not "here's our platform." More: "You're dealing with X — here's what we've seen work."
+**Angle:** You noticed something specific about their situation that one specific
+Intempt feature helps with. Not "here's our platform."
 
 **Offer:** "We're giving a small group of [their type] free access to Intempt Pro."
 
@@ -142,50 +202,64 @@ formal from there."
 
 ---
 
-## 5. MESSAGE FRAMEWORK — 5 LINES MAX
+## 5. MESSAGE FRAMEWORK — CONFIRMED WORKING FORMAT
 
-**Line 1 — The hook (MUST be specific to them)**
-One sentence. References something real: a post, a trigger, their specific role/company.
-Never generic. Never starts with "I".
+This is the format confirmed by Somya. Use it exactly.
 
-**Line 2 — Why it's relevant (observation, not pitch)**
-One sentence. Bridge from what you noticed to why you're reaching out.
-You're sharing an observation, not selling.
+```
+Hey [Name], since we're connected thought I'd reach out.
 
-**Line 3 — Somya's context (brief, peer-level)**
-One sentence. Who she is and what Intempt does. Maximum one clause.
+We built [specific Intempt feature name], [one line on what it does
+that is directly relevant to their actual work].
 
-**Line 4 — The specific offer**
-One sentence. What she's offering and why she picked them.
-Make it easy to say yes in under five seconds.
+Giving Pro access to a small group right now. [Want in? / Interested? / Worth a look?]
 
-**Line 5 — The soft CTA**
-One sentence. Not "book a call." Something they can reply yes/no to.
-"Worth a look?" / "Want in?" / "Happy to share access."
+Somya
+```
+
+**Rules:**
+- Line 1: Short opener. Vary it naturally: "since we're connected thought I'd reach out" /
+  "saw we're connected so thought I'd drop a note" / "since we're connected thought I'd say hi"
+- Line 2: Name the specific Intempt feature (Intempt Studio / Intempt Journeys / Intempt Analytics).
+  Connect it directly to what they actually do. Do NOT list multiple features. Do NOT say
+  "growth OS." Do NOT say "platform for SaaS teams covering lifecycle, experiments, analytics."
+  One feature. One sentence. Specific to their world.
+- Line 3: "Giving Pro access to a small group right now." + one-word or short CTA.
+- No em dashes anywhere.
+- Signs off "Somya" only.
+
+**CTA rotation:** Vary across messages. "Want in?" / "Interested?" / "Worth a look?"
 
 ---
 
 ## 6. MESSAGE TEMPLATES BY CATEGORY
 
-These are starting points — never copy-paste. Every message must have a
-real hook from the research in Lines 1-2 before anything else.
+### AGENCY — Website/landing page designer
+Research confirmed: pitch Intempt Studio only.
 
-### SIGNUP — Founder/CEO at early stage startup
 ```
-[Hook: something specific about what they're building or a trigger]
-[Observation: why that's relevant to what Intempt does]
-I'm Somya — PMM at Intempt, [one-line descriptor].
-Giving free Pro access to a small group of founders building [their type of product].
-Want in?
+Hey [Name], since we're connected thought I'd drop a note.
+
+We built Intempt Studio, an AI creative tool that lets designers build landing pages
+for clients in minutes. All your client brands in one place, one platform.
+
+Giving Pro access to a small group right now. Interested?
+
+Somya
 ```
 
-**Example (real hook required):**
+### AGENCY — Growth/funnels/AI automation agency
+Research confirmed: pitch lifecycle automation + experiments.
+
 ```
-Saw you moved from Gong to building your own PLG product — that's a bold call.
-Curious how you're thinking about lifecycle now that you own the whole funnel.
-I'm Somya at Intempt — we're a unified lifecycle + analytics platform for exactly this stage.
-Giving free access to a small group. Thought you might find it useful.
-Want in?
+Hey [Name], since we're connected thought I'd reach out.
+
+We built Intempt, a platform for lifecycle automation, funnel experiments, and analytics.
+Maps well to the kind of growth systems you build for clients.
+
+Giving Pro access to a small group right now. Want in?
+
+Somya
 ```
 
 ---
